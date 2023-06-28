@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premise</title>
+</head>
+<body style="background-color: tomato ; color: whitesmoke;">
+    <pre>
+        Q.1	Write one example explaining how you can write a callback function.		
+        
+        function and paramite argument  then are pass  
+        
+        
+    </pre>
+    <hr> 
+
+    <pre>
+        Q.2	"Write a callback function to print numbers from 1 to 7, in which 1 should be printed after 1 sec, 2 should be printed after 2 sec, 3 should be printed after 3 sec, and so on. 
+
+
+Explain callback hell.
+Numbers
+1
+2
+3
+4
+5
+6
+7"	
+setTimeout(() => {
+         console.log("1") ;
+    
+     setTimeout(() => {
+         console.log("2") ;
+         setTimeout(() => {
+             console.log("3") ;
+             setTimeout(() => {
+                 console.log("4") ;
+                 setTimeout(() => {
+                     console.log("5") ;
+                     setTimeout(() => {
+                        console.log("6") ;
+                         setTimeout(() => {
+                             console.log("7") ;
+                            
+                         }, 1000);
+                     }, 2000);
+                 }, 3000);
+             }, 4000);
+         }, 5000);
+     }, 6000);
+    
+     }, 7000);																								
+    </pre>
+<hr>
+<pre>
+    Q.3	"Write the promise function to print numbers from 1 to 7, in which 1 should be printed after 1 sec, 2 should be printed after 2 sec, 3 should be printed after 3 sec, and so on. 
+
+Numbers
+1
+2
+3
+4
+5
+6
+7"		
+function resolvePromise(a,b){
+    return new Promise((resovle,reject)=>{
+        setTimeout(()=>{
+            console.log(a);
+            resovle("promis Succesfully...");
+        },b)
+    })
+    }
+    function vowelAlpha() {
+        resolvePromise('1',1000)
+        .then(()=>resolvePromise('2',2000))
+        .then(()=>resolvePromise('3',3000))
+        .then(()=>resolvePromise('4',4000))
+        .then(()=>resolvePromise('5',5000))
+        .then(()=>resolvePromise('6',6000))
+        .then(()=>resolvePromise('7',7000))
+    }vowelAlpha();
+
+
+</pre>
+<hr>
+<pre>
+    Q.4	"Create a promise function accepting an argument, if yes is passed to the function then it should go to resolved state and print Promise Resolved, and if nothing is passed 
+then it should go to reject the state and catch the error and print Promise Rejected "	
+
+let variable =true;
+ let myPromise = new Promise((res, rej )=>{
+    if (variable ===true){
+         res('Promise resolve Succesfully')
+     }
+     else{
+         rej("Promis Reject")
+     }
+ }) 
+ myPromise
+ .then((item)=> console.log(item))
+ .catch((err)=> console.log(err)); 
+
+</pre>	
+<hr>
+<pre>
+    Q. 5	Create examples to explain callback function 	
+    function greeting(name) {
+        console.log(`Hello ${name}`);
+    }
+    
+    function getUserName(callback) {
+        const name = prompt("Enter your name");
+        callback(name);
+    }
+    
+    getUserName(greeting);
+    
+    
+</pre>
+<hr>
+<pre>
+    Q. 6	Create examples to explain callback hell function	
+    onst mainFunction = (callback) => {
+        setTimeout(() => {
+        callback([2, 3, 4]);
+        }, 2000)
+        }
+        
+        // Add function
+        const add = (array) => {
+        let sum = 0;
+        for(let i of array) {
+        sum += i;
+        }
+        console.log(sum);
+        }
+                                                                                                        
+</pre>
+<hr>
+<pre>
+    Q. 7	Create examples to explain promises function
+    
+    new Promise((resolveOuter) => {
+        resolveOuter(
+          new Promise((resolveInner) => {
+            setTimeout(resolveInner, 1000);
+          }),
+        );
+      });
+</pre>
+<hr>
+<pre>
+    
+    Q. 8	Create examples to explain async await function																									
+
+    async function name(param0) {
+        statements
+        }
+        async function name(param0, param1) {
+        statements
+        }
+        async function name(param0, param1, /* … ,*/ paramN) {
+        statements
+        }
+</pre>
+<hr>
+<pre>
+    Q. 9	Create examples to explain promise.all function		
+    
+    p1 = Promise.resolve(50);
+p2 = 200
+p3 = new Promise(function(resolve, reject) {
+setTimeout(resolve, 100, 'geek');
+});
+
+Promise.all([p1, p2, p3]).then(function(values) {
+document.write(values);
+});
+</pre>
+
+</body>
+<script src="./prep.js"></script>
+</html>
